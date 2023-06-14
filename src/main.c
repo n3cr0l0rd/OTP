@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 
 void generate_pad(const size_t message_len)
 {
-	srandom(getpid() + time(NULL));
+	srandom(getpid() ^ time(NULL));
 	char rand_char;
 
 	FILE *pad = fopen("pad.txt", "w");
